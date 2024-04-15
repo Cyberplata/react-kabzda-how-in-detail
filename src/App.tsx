@@ -2,13 +2,8 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./Rating/Rating";
+import {OnOff} from "./components/OnOff/OnOff";
 
-/*function sum(a: any, b: number) {
-
-    alert(a + b)
-}
-sum(23, 12)
-sum(100, 300)*/
 
 
 // function declaration
@@ -18,18 +13,16 @@ function App(props: any) {
     console.log("App rendering")
     return (
         <div>
-            {/*<PageTitle title={"This is APP component"}/>
-            <PageTitle title={"My friends"}/>
-            Article 1
-            <Rating value={3}/>*/}
             <Accordion titleValue={"Menu"} collapsed={true}/>
             <Accordion titleValue={"Users"} collapsed={false}/>
-            {/*<Rating value={0}/>
+            
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
             <Rating value={4}/>
-            <Rating value={5}/>*/}
+            <Rating value={5}/>
+            <OnOff valueButton={true}/>
+            <OnOff valueButton={false}/>
         </div>
     );
 }
