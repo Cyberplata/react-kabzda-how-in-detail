@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
+import OnOff from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/Accordion";
 
 
 
@@ -13,16 +14,27 @@ function App(props: any) {
     console.log("App rendering")
     return (
         <div>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
+            {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
+            {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
+            <UncontrolledAccordion />
+            <UncontrolledAccordion />
             
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-            <OnOff valueButton={true}/>
-            <OnOff valueButton={false}/>
+
+            <OnOff />
+            <OnOff />
+            <OnOff />
+            <OnOff />
+            {/*<OnOff on={true}/>*/}
+            {/*<OnOff on={false}/>*/}
+            {/*<OnOff on={false}/>*/}
+
+            {/*<OnOff valueButton={true}/>*/}
+            {/*<OnOff valueButton={false}/>*/}
         </div>
     );
 }
@@ -32,7 +44,7 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
+    // console.log("PageTitle rendering")
     return <h1>{props.title}</h1>
 }
 
