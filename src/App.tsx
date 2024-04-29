@@ -16,25 +16,20 @@ function App(props: any) {
         <div>
             {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
-            <UncontrolledAccordion />
-            <UncontrolledAccordion />
             
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
 
             <OnOff />
             <OnOff />
             <OnOff />
             <OnOff />
-            {/*<OnOff on={true}/>*/}
-            {/*<OnOff on={false}/>*/}
-            {/*<OnOff on={false}/>*/}
 
-            {/*<OnOff valueButton={true}/>*/}
-            {/*<OnOff valueButton={false}/>*/}
+            <UncontrolledAccordion titleValue={"Menu"}/>
+            <UncontrolledAccordion titleValue={"Users"}/>
         </div>
     );
 }
