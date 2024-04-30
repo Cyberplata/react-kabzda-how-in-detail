@@ -14,23 +14,20 @@ function App(props: any) {
     // обязана вернуть JSX
     console.log("App rendering")
     return (
-        <div>
+        <div className={"App"}>
             {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
             
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
 
-            <OnOff />
-            <OnOff />
-            <OnOff />
             <OnOff />
 
             <UncontrolledAccordion titleValue={"Menu"}/>
-            <UncontrolledAccordion titleValue={"Users"}/>
+            {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
             <UncontrolledRating />
         </div>
