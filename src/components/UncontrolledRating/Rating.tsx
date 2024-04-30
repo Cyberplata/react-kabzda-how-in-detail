@@ -1,50 +1,35 @@
 import React, {useState} from "react";
 
-type RatingPropsType = {
+type UncontrolledRatingPropsType = {
     // value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export function UncontrolledRating(props: RatingPropsType) {
+export function UncontrolledRating(props: UncontrolledRatingPropsType) {
     console.log("Rating rendering")
 
-    const [value, setValue] = useState(0)
-    const [selected, setSelected] = useState(true)
+    const [rating, setRating] = useState(0)
 
-    const onClickHandler = () => {
+    const onClickHandler = (value: number) => {
         // console.log('!!!!!!')
-        if (value > 0) {
-            setValue(0)
-        }
-        if (value > 1) {
-            setValue(1)
-        }
-        if (value > 2) {
-            setValue(2)
-        }
-        if (value > 3) {
-            setValue(3)
-        }
-        if (value > 4) {
-            setValue(4)
-        }
+        setRating(value)
     }
 
     return (
         <div>
-            <Star selected={value > 0}/>
-            <button onClick={onClickHandler}>1</button>
+            <Star selected={rating > 0}/>
+            <button onClick={() => onClickHandler(1)}>1</button>
 
-            <Star selected={value > 1}/>
-            <button onClick={onClickHandler}>2</button>
+            <Star selected={rating > 1}/>
+            <button onClick={() => onClickHandler(2)}>2</button>
 
-            <Star selected={value > 2}/>
-            <button onClick={onClickHandler}>3</button>
+            <Star selected={rating > 2}/>
+            <button onClick={() => onClickHandler(3)}>3</button>
 
-            <Star selected={value > 3}/>
-            <button onClick={onClickHandler}>4</button>
+            <Star selected={rating > 3}/>
+            <button onClick={() => onClickHandler(4)}>4</button>
 
-            <Star selected={value > 4}/>
-            <button onClick={onClickHandler}>5</button>
+            <Star selected={rating > 4}/>
+            <button onClick={() => onClickHandler(5)}>5</button>
         </div>
     );
 
@@ -65,3 +50,30 @@ function Star(props: StarPropsType) {
         return <span>star </span>;
     }
 }
+
+
+// import React, { useState } from "react";
+//
+// type RatingPropsType = {
+//     value: 0 | 1 | 2 | 3 | 4 | 5;
+// };
+//
+// export function UncontrolledRating(props: RatingPropsType) {
+//     const [rating, setRating] = useState(0);
+//
+//     const handleClick = (newRating: number) => {
+//         setRating(newRating);
+//     };
+//
+//     return (
+//         <div>
+//             {Array(5)
+//                 .fill(0)
+//                 .map((_, i) => (
+//                     <button key={i} onClick={() => handleClick(i + 1)}>
+//                         {rating >= i + 1 ? "★" : "☆"}
+//                     </button>
+//                 ))}
+//         </div>
+//     );
+// }
