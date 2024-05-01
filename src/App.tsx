@@ -22,7 +22,7 @@ function App(props: any) {
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
 
             <UncontrolledRating/>
-            <Rating value={1}/>
+            {/*<Rating value={1}/>*/}
             {/*<UncontrolledRating value={2}/>*/}
             {/*<UncontrolledRating value={3}/>*/}
             {/*<UncontrolledRating value={4}/>*/}
