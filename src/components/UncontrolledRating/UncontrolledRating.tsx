@@ -37,16 +37,19 @@ export function UncontrolledRating(props: RatingPropsType) {
 
 type StarPropsType = {
     selected: boolean
-    onClickSpanHandler: () => void
+    // onClickSpanHandler: () => void
 }
 
 function Star(props: StarPropsType) {
     // console.log("Star rendering")
 
-    return props.selected
-        ? <span onClick={props.onClickSpanHandler}><b>star</b> </span>
-        : <span onClick={props.onClickSpanHandler}>star </span>
+    // return props.selected
+    //     ? <span onClick={props.onClickSpanHandler}><b>star</b> </span>
+    //     : <span onClick={props.onClickSpanHandler}>star </span>
 
+    return <span>
+        { props.selected ? <b>star</b> : "star" }
+    </span>
 
     // if (props.selected === true) {
     //     return <span><b>star</b> </span>
