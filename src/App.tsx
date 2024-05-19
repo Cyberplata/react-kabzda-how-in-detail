@@ -5,6 +5,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import Accordion from "./components/Accordion/Accordion";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 // function declaration
 function App(props: any) {
@@ -31,10 +32,10 @@ function App(props: any) {
             {/*<OnOff on={switchOn} onChange={ setSwitchOn }/>*/}
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
+            <UncontrolledAccordion titleValue={"Menu"}/>
 
             {/*<OnOff/>*/}
 
-            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
 
             {/*<UncontrolledRating/>*/}
