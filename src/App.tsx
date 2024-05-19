@@ -17,20 +17,19 @@ function App(props: any) {
     return (
         <div className={"App"}>
 
-            <OnOff on={switchOn} onChange={ setSwitchOn }/>
-            {/*<br/>*/}
-            {/*<UncontrolledOnOff />*/}
-
-            {/*<Rating value={ratingValue}*/}
-            {/*        onClick={setRatingValue}*/}
-            {/*/>*/}
-            {/*<UncontrolledRating />*/}
+            <Rating value={ratingValue}
+                    onClick={setRatingValue}
+            />
+            <UncontrolledRating/>
 
             <Accordion titleValue={"Menu"}
                        collapsed={accordionCollapsed}
-                       onChange={ () => {setAccordionCollapsed(!accordionCollapsed)} }
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}
             />
-
+            {/*<OnOff on={switchOn} onChange={ setSwitchOn }/>*/}
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
 
             {/*<OnOff/>*/}

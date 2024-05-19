@@ -4,6 +4,7 @@ type PropsType = {
     on: boolean
     onChange: (on: boolean) => void
 }
+
 function OnOff(props: PropsType) {
     console.log("OnOff rendering")
 
@@ -39,30 +40,18 @@ function OnOff(props: PropsType) {
     return (
         <div>
             <div style={onStyle}
-                 onClick={ () => {props.onChange(true)} }>On</div>
+                 onClick={() => {
+                     props.onChange(true)
+                 }}>On
+            </div>
             <div style={offStyle}
-                 onClick={ () => {props.onChange(false)} }>Off</div>
+                 onClick={() => {
+                     props.onChange(false)
+                 }}>Off
+            </div>
             <div style={indicatorStyle}></div>
         </div>
     )
 }
 
 export default OnOff
-
-
-// ---------------------------------------------------------------------------------------
-// type OnOffPropsType = {
-//     valueButton: boolean
-// }
-//
-// export const OnOff = (props: OnOffPropsType) => {
-//     return (
-//         <div className={"onOff"}>
-//             <button className={props.valueButton ? "on" : "off"}>on</button>
-//             <button className={!props.valueButton ? "on" : "off"}>off</button>
-//             <span className="circle" style={{borderColor: props.valueButton ? "green" : "red"}}></span>
-//
-//             {/*{ props.valueButton && }*/}
-//         </div>
-//     );
-// };
