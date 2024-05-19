@@ -17,9 +17,9 @@ function App(props: any) {
     return (
         <div className={"App"}>
 
-            <OnOff value={on} onClick={setOn}/>
-            <br/>
-            <UncontrolledOnOff />
+            <OnOff on={false} onChange={ (on) => {alert(on)} }/>
+            {/*<br/>*/}
+            {/*<UncontrolledOnOff />*/}
 
             {/*<Rating value={ratingValue}*/}
             {/*        onClick={setRatingValue}*/}
