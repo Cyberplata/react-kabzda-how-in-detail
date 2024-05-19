@@ -11,7 +11,7 @@ function App(props: any) {
     console.log("App rendering")
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [on, setOn] = useState(false) // hook with init value
 
     return (
@@ -26,10 +26,10 @@ function App(props: any) {
             {/*/>*/}
             {/*<UncontrolledRating />*/}
 
-            {/*<Accordion titleValue={"Menu"}*/}
-            {/*           collapsed={accordionCollapsed}*/}
-            {/*           onClick={setAccordionCollapsed}*/}
-            {/*/>*/}
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionCollapsed}
+                       onChange={ () => {setAccordionCollapsed(!accordionCollapsed)} }
+            />
 
 
 
