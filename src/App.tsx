@@ -17,7 +17,7 @@ function App(props: any) {
     return (
         <div className={"App"}>
 
-            <OnOff on={switchOn} onChange={ (on) => {setSwitchOn(on)} }/>
+            <OnOff on={switchOn} onChange={ setSwitchOn }/>
             {/*<br/>*/}
             {/*<UncontrolledOnOff />*/}
 
