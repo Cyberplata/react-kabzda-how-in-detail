@@ -12,12 +12,12 @@ function App(props: any) {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [on, setOn] = useState(false) // hook with init value
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
 
     return (
         <div className={"App"}>
 
-            <OnOff on={false} onChange={ (on) => {alert(on)} }/>
+            <OnOff on={switchOn} onChange={ (on) => {setSwitchOn(on)} }/>
             {/*<br/>*/}
             {/*<UncontrolledOnOff />*/}
 
