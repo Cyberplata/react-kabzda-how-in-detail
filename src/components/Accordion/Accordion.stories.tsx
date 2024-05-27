@@ -8,13 +8,13 @@ const meta: Meta<typeof Accordion> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Accordion>;
 
 export const FirstStory: Story = {
     args: {
         titleValue: "hello",
-        collapsed: true,
-        onChange: () => {}
+        collapsed: true
     },
 };
 
@@ -22,16 +22,14 @@ export const CollapsedAccordion = () => {
     return <Accordion titleValue={"Collapsed Accordion"}
                       collapsed={true}
                       onChange={() => {
-                      }}
-    />
+                          console.log('on change')
+                      }}/>
 }
 
 export const OpenedAccordion = () => {
     return <Accordion titleValue={"Opened Accordion"}
                       collapsed={false}
-                      onChange={() => {
-                      }}
-    />
+                      onChange={() => {}}/>
 }
 
 export const AccordionDemo = () => {
