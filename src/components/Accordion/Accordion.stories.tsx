@@ -4,20 +4,8 @@ import { action } from '@storybook/addon-actions';
 import Accordion from './Accordion';
 import React, {useState} from "react";
 
-const meta: Meta<typeof Accordion> = {
+export default {
     component: Accordion,
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Accordion>;
-
-export const FirstStory: Story = {
-    args: {
-        titleValue: "hello",
-        collapsed: true,
-        onChange: () => {},
-    },
 };
 
 const onChangeHandler = action('onChange')
