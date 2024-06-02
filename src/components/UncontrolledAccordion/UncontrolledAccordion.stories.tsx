@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 
-import React, {useState} from "react";
+import React from "react";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
 
 export default {
     component: UncontrolledAccordion,
 };
 
-export const Test = () => {
+export const TestUncontrolledAccordion = () => {
     return <UncontrolledAccordion titleValue={"Uncontrolled Accordion"}/>
 }
