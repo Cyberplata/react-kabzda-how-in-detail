@@ -8,10 +8,13 @@ export default {
     component: UncontrolledOnOff,
 };
 
-const onChangeHandler = action('onClick')
+const onChangeHandler = action('on or off clicked')
 
-export const TestUncontrolledOnOff = () => {
-    return <UncontrolledOnOff onChange={onChangeHandler}/>
+export const OnMode = () => {
+    return <UncontrolledOnOff onChange={onChangeHandler} defaultOn={true}/>
+}
+export const OffMode = () => {
+    return <UncontrolledOnOff onChange={onChangeHandler} defaultOff={false}/>
 }
 export const DefaultInputValue = () => {
     return <input defaultValue={"yo"} />

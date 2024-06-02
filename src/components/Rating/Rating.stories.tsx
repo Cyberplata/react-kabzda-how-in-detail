@@ -16,7 +16,6 @@ export const EmptyRating = () => {
     />
 }
 
-
 export const Rating1 = () => {
     return <Rating value={1}
                    onClick={onChangeHandler}
