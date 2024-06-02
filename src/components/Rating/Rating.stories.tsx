@@ -41,13 +41,13 @@ export const Rating4 = () => {
     />
 }
 
-export const FilledRating = () => {
+export const Rating5 = () => {
     return <Rating value={5}
                    onClick={() => {}}
     />
 }
 
-export const DynamicRating = () => {
+export const RatingChanging = () => {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     return <Rating value={ratingValue}
                    onClick={setRatingValue}
