@@ -16,6 +16,7 @@ export const OnMode = () => {
 export const OffMode = () => {
     return <UncontrolledOnOff onChange={onChangeHandler} defaultOff={false}/>
 }
+export const BugMode = () => <div>Unsync when change defaultValue when already rendered</div>
 export const DefaultInputValue = () => {
     return <input defaultValue={"yo"} />
 }
