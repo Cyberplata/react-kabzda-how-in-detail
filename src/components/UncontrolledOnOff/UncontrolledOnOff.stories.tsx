@@ -14,5 +14,5 @@ export const TestUncontrolledOnOff = () => {
     return <UncontrolledOnOff onChange={onChangeHandler}/>
 }
 export const DefaultInputValue = () => {
-    return <input value={"yo"} readOnly={true}/>
+    return <input defaultValue={"yo"} />
 }
