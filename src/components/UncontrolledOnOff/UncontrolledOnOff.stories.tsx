@@ -13,3 +13,6 @@ const onChangeHandler = action('onClick')
 export const TestUncontrolledOnOff = () => {
     return <UncontrolledOnOff onChange={onChangeHandler}/>
 }
+export const DefaultInputValue = () => {
+    return <input value={"yo"} readOnly={true}/>
+}
