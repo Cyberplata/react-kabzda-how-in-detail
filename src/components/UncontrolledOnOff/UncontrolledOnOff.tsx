@@ -4,7 +4,7 @@ type PropsType = {
     onChange: (on: boolean) => void
 }
 
-function UncontrolledOnOff(props: PropsType) {
+export function UncontrolledOnOff(props: PropsType) {
     console.log("UncontrolledOnOff rendering")
 
     let [on, setOn] = useState(false) // hook with init value
@@ -55,5 +55,3 @@ function UncontrolledOnOff(props: PropsType) {
         </div>
     )
 }
-
-export default UncontrolledOnOff
