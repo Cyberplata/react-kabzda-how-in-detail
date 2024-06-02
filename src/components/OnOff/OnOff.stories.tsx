@@ -7,12 +7,14 @@ export default {
     component: OnOff,
 };
 
+const callback = action('on or off clicked')
+
 export const OnMode = () => {
-    return <OnOff on={true} onChange={action('clicked')}/>
+    return <OnOff on={true} onChange={callback}/>
 }
 
 export const OffMode = () => {
-    return <OnOff on={false} onChange={() => {}}/>
+    return <OnOff on={false} onChange={callback}/>
 }
 
 export const ModeChanging = () => {
