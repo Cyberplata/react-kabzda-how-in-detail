@@ -8,7 +8,7 @@ export default {
 };
 
 export const OnMode = () => {
-    return <OnOff on={true} onChange={() => {}}/>
+    return <OnOff on={true} onChange={action('clicked')}/>
 }
 
 export const OffMode = () => {
