@@ -5,6 +5,7 @@ import {Accordion} from './Accordion';
 import React, {useState} from "react";
 
 export default {
+    title: "Accordion",
     component: Accordion,
 };
 
