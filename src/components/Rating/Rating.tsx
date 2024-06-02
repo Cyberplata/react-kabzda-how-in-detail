@@ -18,7 +18,6 @@ export function Rating(props: RatingPropsType) {
             <Star selected={props.value > 4} onClick={props.onClick} value={5}/>
         </div>
     );
-
 }
 
 type StarPropsType = {
