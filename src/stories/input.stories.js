@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import {action} from '@storybook/addon-actions';
 
 export default {
@@ -17,12 +17,17 @@ export const TrackValueOfUncontrolledInput = () => {
 
 export const GetValueOfUncontrolledInputByButtonPress = () => {
     const [value, setValue] = useState("")
+    const inputRef = useRef(null);
 
-    return <> <input id={"inputId"}/> <button onClick={(e) => {
-            const el = document.getElementById("inputId")
+    const onClickSaveHandler = () => {
+        const el = inputRef.current;
 
-            setValue(el.value)
-        }}>save</button> - actual value: {value} </>
+        setValue(el.value)
+    }
+
+    return <>
+        <input ref={inputRef} /> <button onClick={onClickSaveHandler}>save</button> - actual value: {value}
+    </>
 }
 
 export const ControlledInputWithFixedValue = () => <input value={"it-incubator.by"}/>
