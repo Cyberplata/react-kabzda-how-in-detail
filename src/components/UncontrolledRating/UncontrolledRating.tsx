@@ -24,7 +24,7 @@ export function UncontrolledRating(props: RatingPropsType) {
                   setValue={ () => {setValue(2); props.onChange(2)} }
             />
             <Star selected={value > 2}
-                  setValueQ={ () => {setValue(3); props.onChange(3)} }
+                  setValue={ () => {setValue(3); props.onChange(3)} }
             />
             <Star selected={value > 3}
                   setValue={ () => {setValue(4); props.onChange(4)} }

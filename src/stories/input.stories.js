@@ -7,22 +7,25 @@ export default {
 };
 
 export const UncontrolledInput = () => <input/>
+
 export const TrackValueOfUncontrolledInput = () => {
     const [value, setValue] = useState("")
-    return <><input onChange={(event) => {
+
+    const onChangeHandler = (event) => {
         const actualValue = event.currentTarget.value;
-        setValue(actualValue)
-    }}/> - {value}</>
+        setValue(actualValue);
+    }
+
+    return <><input value={value} onChange={onChangeHandler}/> - {value}</>
 }
 
 export const GetValueOfUncontrolledInputByButtonPress = () => {
-    const [value, setValue] = useState("")
+    const [value, setValue] = useState("");
     const inputRef = useRef(null);
 
     const onClickSaveHandler = () => {
         const el = inputRef.current;
-
-        setValue(el.value)
+        setValue(el.value);
     }
 
     return <>
