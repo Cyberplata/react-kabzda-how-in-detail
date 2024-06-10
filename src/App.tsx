@@ -21,7 +21,7 @@ function App(props: any) {
             <Rating value={ratingValue}
                     onClick={setRatingValue}
             />
-            <UncontrolledRating/>
+            <UncontrolledRating />
 
             <Accordion titleValue={"Menu"}
                        collapsed={accordionCollapsed}

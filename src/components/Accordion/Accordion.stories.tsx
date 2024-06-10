@@ -1,6 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
 import {Accordion} from './Accordion';
 import React, {useState} from "react";
 
@@ -10,17 +8,29 @@ export default {
 };
 
 const onChangeHandler = action('onChange')
+const onClickCallBack = action('some item was clicked')
 
 export const CollapsedAccordion = () => {
     return <Accordion titleValue={"Collapsed Accordion"}
                       collapsed={true}
-                      onChange={onChangeHandler}/>
+                      onChange={onChangeHandler}
+                      items={[]}
+                      onClick={onClickCallBack}
+    />
 }
 
 export const OpenedAccordion = () => {
     return <Accordion titleValue={"Opened Accordion"}
                       collapsed={false}
-                      onChange={onChangeHandler}/>
+                      onChange={onChangeHandler}
+                      items={[
+                          {title: "Dimych", value: 1},
+                          {title: "Platon", value: 2},
+                          {title: "Alina", value: 3},
+                          {title: "Oleg", value: 4},
+                      ]}
+                      onClick={onClickCallBack}
+    />
 }
 
 export const AccordionDemo = () => {
@@ -30,6 +40,13 @@ export const AccordionDemo = () => {
                       onChange={() => {
                           setCollapsed(!collapsed)
                       }}
+                      items={[
+                          {title: "Dimych", value: 1},
+                          {title: "Platon", value: 2},
+                          {title: "Alina", value: 3},
+                          {title: "Oleg", value: 4},
+                      ]}
+                      onClick={ (id) => {alert(`user with ID ${id} should be happy`)} }
     />
 }
 
