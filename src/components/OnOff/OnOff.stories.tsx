@@ -18,7 +18,8 @@ export const OffMode = () => {
 }
 
 export const ModeChanging = () => {
-    let [switchOn, setSwitchOn] = useState<boolean>(false)
+    const [switchOn, setSwitchOn] = useState<boolean>(false)
+
     return <OnOff on={switchOn} onChange={setSwitchOn}/>
 }
 
