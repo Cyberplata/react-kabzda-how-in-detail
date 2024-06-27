@@ -21,14 +21,14 @@ function App(props: any) {
             <Rating value={ratingValue}
                     onClick={setRatingValue}
             />
-            <UncontrolledRating />
+            {/*<UncontrolledRating />*/}
 
-            <Accordion titleValue={"Menu"}
-                       collapsed={accordionCollapsed}
-                       onChange={() => {
-                           setAccordionCollapsed(!accordionCollapsed)
-                       }}
-            />
+            {/*<Accordion titleValue={"Menu"}*/}
+            {/*           collapsed={accordionCollapsed}*/}
+            {/*           onChange={() => {*/}
+            {/*               setAccordionCollapsed(!accordionCollapsed)*/}
+            {/*           }}*/}
+            {/*/>*/}
             {/*<OnOff on={switchOn} onChange={ setSwitchOn }/>*/}
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 

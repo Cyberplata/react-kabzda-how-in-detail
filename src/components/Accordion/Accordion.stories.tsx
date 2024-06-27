@@ -33,12 +33,13 @@ export const OpenedAccordion = () => {
     />
 }
 
-export const AccordionDemo = () => {
-    const [collapsed, setCollapsed] = useState(false)
-    return <Accordion titleValue={"Accordion"}
-                      collapsed={collapsed}
+export const ModeChanging = () => {
+    const [value, setValue] = useState(false)
+
+    return <Accordion titleValue={"Users"}
+                      collapsed={value}
                       onChange={() => {
-                          setCollapsed(!collapsed)
+                          setValue(!value)
                       }}
                       items={[
                           {title: "Dimych", value: 1},

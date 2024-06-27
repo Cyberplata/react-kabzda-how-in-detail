@@ -1,0 +1,32 @@
+/* SelectCoza.css */
+.select-container {
+    width: 200px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select-header {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.select-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.select-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-option:hover {
+    background-color: #f0f0f0;
+}
