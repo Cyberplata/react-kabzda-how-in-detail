@@ -12,7 +12,7 @@ export const WithValue = () => {
 
     return <>
         <Select value={value}
-                onChange={action("Value changed")}
+                onChange={setValue}
                 items={[
                     {value: "1", title: "Minsk"},
                     {value: "2", title: "Moscow"},
@@ -26,7 +26,7 @@ export const WithoutValue = () => {
 
     return <>
         <Select value={value}
-                onChange={action("Value changed")}
+                onChange={setValue}
                 items={[
                     {value: "1", title: "Minsk"},
                     {value: "2", title: "Moscow"},
