@@ -12,16 +12,18 @@ type ActionType = {
 const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED"
 
 const reducer = (state: boolean, action: ActionType) => {
-    // console.log("REDUCER START:")
-    // console.log(state)
-    // console.log(action)
-    // console.log("REDUCER END:")
-
-    if (action.type === TOGGLE_CONSTANT) {
-        return !state
+    switch (action.type) {
+        case TOGGLE_CONSTANT :
+            return !state;
+        default:
+            return state;
     }
 
-    return state
+    // if (action.type === TOGGLE_CONSTANT) {
+    //     return !state
+    // }
+    //
+    // return state
 }
 
 export function UncontrolledAccordion(props: AccordionPropsType) {
