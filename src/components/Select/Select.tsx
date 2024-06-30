@@ -17,9 +17,7 @@ export function Select(props: SelectPropsType) {
 
     const selectedItem = props.items.find(i => i.value === props.value)
 
-    const showItems = () => {
-        setActive(!active)
-    }
+    const toggleItems = () => setActive(!active)
 
     return (
         <>
@@ -30,7 +28,10 @@ export function Select(props: SelectPropsType) {
             </select>
 
             <div className={styles.select}>
-                <h3 onClick={showItems}>{selectedItem && selectedItem.title}</h3>
+                <span
+                    className={styles.main}
+                    onClick={toggleItems}>{selectedItem && selectedItem.title}
+                </span>
                 {
                     active &&
                     <div className={styles.items}>
