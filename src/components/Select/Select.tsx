@@ -14,8 +14,10 @@ type SelectPropsType = {
 
 export function Select(props: SelectPropsType) {
     const [active, setActive] = useState(false)
+    const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
     const selectedItem = props.items.find(i => i.value === props.value)
+    const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
 
     const toggleItems = () => setActive(!active)
     const onItemClick = (value: any) => {
@@ -42,6 +44,7 @@ export function Select(props: SelectPropsType) {
                     active &&
                     <div className={styles.items}>
                         {props.items.map(i => <div
+                            className={styles.item + " " + (hoveredItem === i ? styles.selected : "")}
                             key={i.value}
                             onClick={() => onItemClick(i.value)}
                         >{i.title}
