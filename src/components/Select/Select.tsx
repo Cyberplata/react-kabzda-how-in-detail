@@ -31,9 +31,14 @@ export function Select(props: SelectPropsType) {
 
             <div className={styles.select + " " + (active ? styles.active : "")}>
                 <h3 onClick={onClickHandler}>{selectedItem && selectedItem.title}</h3>
-                <div className={styles.items}>
-                    {props.items.map(i => <div onClick={() => {alert(`hello!!!`)}} key={i.value}>{i.title}</div>)}
-                </div>
+                {
+                    active &&
+                    <div className={styles.items}>
+                        {props.items.map(i => <div onClick={() => {
+                            alert(`hello!!!`)
+                        }} key={i.value}>{i.title}</div>)}
+                    </div>
+                }
             </div>
         </>
     );
