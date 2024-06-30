@@ -36,8 +36,12 @@ export function Select(props: SelectPropsType) {
                     active &&
                     <div className={styles.items}>
                         {props.items.map(i => <div
-                            onClick={() => {props.onChange(i.value)}}
-                            key={i.value}>{i.title}
+                            key={i.value}
+                            onClick={() => {
+                                props.onChange(i.value)
+                                toggleItems()
+                            }}
+                        >{i.title}
                         </div>)}
                     </div>
                 }
