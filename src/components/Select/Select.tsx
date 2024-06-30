@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {KeyboardEvent, useState} from "react";
 import styles from './Select.module.css'
 
 type ItemType = {
@@ -25,6 +25,23 @@ export function Select(props: SelectPropsType) {
         toggleItems()
     }
 
+    const onKeyUp = (event: KeyboardEvent<HTMLDivElement>) => {
+        // debugger
+        for (let i = 0; i < props.items.length; i++) {
+            if (props.items[i].value === hoveredElementValue) {
+                if (event.key === "ArrowDown") {
+                    setHoveredElementValue(props.items[i + 1].value)
+                    break;
+                }
+            }
+
+            if (event.key === "Enter" || event.key === "Escape") {
+                toggleItems()
+            }
+        }
+        // console.log(e,"press")
+    }
+
     return (
         <>
             <select>
@@ -33,7 +50,10 @@ export function Select(props: SelectPropsType) {
                 <option value="">Kiev</option>
             </select>
 
-            <div className={styles.select}>
+            <div className={styles.select}
+                 onKeyUp={onKeyUp}
+                 tabIndex={0}
+            >
                 <span
                     className={styles.main}
                     onClick={toggleItems}
