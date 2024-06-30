@@ -16,8 +16,9 @@ const reducer = (state: boolean, action: ActionType) => {
         case TOGGLE_CONSTANT :
             return !state;
         default:
-            return state;
+            throw new Error("Bad action type")
     }
+    return state;
 
     // if (action.type === TOGGLE_CONSTANT) {
     //     return !state
