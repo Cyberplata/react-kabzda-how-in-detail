@@ -18,6 +18,7 @@ export function Select(props: SelectPropsType) {
     const selectedItem = props.items.find(i => i.value === props.value)
 
     const toggleItems = () => setActive(!active)
+    // const itemClicked = (value: any) => props.onChange(props.value)
 
     return (
         <>
@@ -35,9 +36,10 @@ export function Select(props: SelectPropsType) {
                 {
                     active &&
                     <div className={styles.items}>
-                        {props.items.map(i => <div onClick={() => {
-                            alert(`hello!!!`)
-                        }} key={i.value}>{i.title}</div>)}
+                        {props.items.map(i => <div
+                            onClick={() => {props.onChange(i.value)}}
+                            key={i.value}>{i.title}
+                        </div>)}
                     </div>
                 }
             </div>
