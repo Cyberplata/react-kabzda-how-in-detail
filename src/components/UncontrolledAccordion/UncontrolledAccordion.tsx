@@ -9,13 +9,15 @@ type ActionType = {
     type: string
 }
 
-const reducer = (state: boolean, action: ActionType) => {
-    console.log("REDUCER START:")
-    console.log(state)
-    console.log(action)
-    console.log("REDUCER END:")
+const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED"
 
-    if (action.type === "TOGGLE-COLLAPSED") {
+const reducer = (state: boolean, action: ActionType) => {
+    // console.log("REDUCER START:")
+    // console.log(state)
+    // console.log(action)
+    // console.log("REDUCER END:")
+
+    if (action.type === TOGGLE_CONSTANT) {
         return !state
     }
 
@@ -32,8 +34,9 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
         {/*<AccordionTitle title={props.titleValue}*/}
         {/*                onClick={() => setCollapsed(!collapsed)}/>*/}
         <AccordionTitle title={props.titleValue}
-                        onClick={ () => {
-                            dispatch({type: "TOGGLE-COLLAPSED"})} }
+                        onClick={() => {
+                            dispatch({type: TOGGLE_CONSTANT})
+                        }}
         />
         {!collapsed && <AccordionBody/>}
     </div>
@@ -46,7 +49,9 @@ type AccordionTitlePropsType = {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("UncontrolledAccordionTitle rendering")
-    return <h3 onClick={ () => {props.onClick()} }>-- {props.title} --</h3>;
+    return <h3 onClick={() => {
+        props.onClick()
+    }}>-- {props.title} --</h3>;
 }
 
 function AccordionBody() {
