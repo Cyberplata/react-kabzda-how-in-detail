@@ -17,7 +17,7 @@ export function Select(props: SelectPropsType) {
 
     const selectedItem = props.items.find(i => i.value === props.value)
 
-    const onClickHandler = () => {
+    const showItems = () => {
         setActive(!active)
     }
 
@@ -29,8 +29,8 @@ export function Select(props: SelectPropsType) {
                 <option value="">Kiev</option>
             </select>
 
-            <div className={styles.select + " " + (active ? styles.active : "")}>
-                <h3 onClick={onClickHandler}>{selectedItem && selectedItem.title}</h3>
+            <div className={styles.select}>
+                <h3 onClick={showItems}>{selectedItem && selectedItem.title}</h3>
                 {
                     active &&
                     <div className={styles.items}>
