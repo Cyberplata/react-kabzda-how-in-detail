@@ -18,7 +18,6 @@ export function Select(props: SelectPropsType) {
     const selectedItem = props.items.find(i => i.value === props.value)
 
     const toggleItems = () => setActive(!active)
-    // const itemClicked = (value: any) => props.onChange(props.value)
 
     return (
         <>
