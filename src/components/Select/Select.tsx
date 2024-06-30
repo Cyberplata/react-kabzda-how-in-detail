@@ -31,6 +31,8 @@ export function Select(props: SelectPropsType) {
 
     const onKeyUp = (event: KeyboardEvent<HTMLDivElement>) => {
         if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+            // console.log(selectedItem)
+            // console.log(hoveredItem)
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredElementValue) {
                     const pretendentElement = event.key === "ArrowDown"
@@ -39,11 +41,15 @@ export function Select(props: SelectPropsType) {
 
                     if (pretendentElement) {
                         props.onChange(pretendentElement.value)
-                        break;
+                        return
                     }
                 }
             }
+            if (!selectedItem) {
+                props.onChange(props.items[0].value);
+            }
         }
+
         if (event.key === "Enter" || event.key === "Escape") {
             setActive(false)
         }
