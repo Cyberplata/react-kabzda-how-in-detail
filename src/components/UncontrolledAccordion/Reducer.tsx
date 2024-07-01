@@ -11,9 +11,12 @@ type StateType = {
 export const reducer = (state: StateType, action: ActionType): StateType => {
     switch (action.type) {
         case TOGGLE_CONSTANT :
-            state.collapsed = !state.collapsed
+            // state.collapsed = !state.collapsed
             console.log(state)
-            return state;
+            return {
+                ...state,
+                collapsed: !state.collapsed
+            };
         default:
             throw new Error("Bad action type")
     }
