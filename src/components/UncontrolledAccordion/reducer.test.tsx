@@ -11,7 +11,6 @@ test('collapsed should be true', () => {
 
     //expection
     expect(newState.collapsed).toBe(true)
-
 })
 
 test('collapsed should be false', () => {
@@ -25,5 +24,16 @@ test('collapsed should be false', () => {
 
     //expection
     expect(newState.collapsed).toBe(false)
+})
 
+test('reducer should throw error because action type is incorrect', () => {
+    // data
+    const state: StateType = {
+        collapsed: true
+    }
+
+    //action
+    expect(() => {
+        reducer(state, {type: "FAKETYPE"})
+    }).toThrowError()
 })
