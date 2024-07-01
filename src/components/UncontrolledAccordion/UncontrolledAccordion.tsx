@@ -10,7 +10,7 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
     console.log("UncontrolledAccordion rendering")
 
     // let [collapsed, setCollapsed] = useState(false)
-    let [collapsed, dispatch] = useReducer(reducer, false)
+    let [collapsed, dispatch] = useReducer(reducer, {collapsed: false})
 
     return <div>
         <AccordionTitle title={props.titleValue}
