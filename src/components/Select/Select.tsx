@@ -12,6 +12,27 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
+// Мы создали новый компонент SelectItem, который принимает item, onMouseEnter, onClick и selected как пропсы.
+// Этот компонент отвечает за рендеринг одного элемента списка.
+// Обернули SelectItem в React.memo, чтобы предотвратить его повторный рендеринг, если пропсы не изменились.
+// В компоненте Select мы теперь используем SelectItem для рендеринга каждого элемента списка.
+const SelectItem = React.memo(({ item, onMouseEnter, onClick, selected }: {
+    item: ItemType,
+    onMouseEnter: () => void,
+    onClick: () => void,
+    selected: boolean
+}) => {
+    return (
+        <div
+            onMouseEnter={onMouseEnter}
+            className={`${styles.item} ${selected ? styles.selected : ""}`}
+            onClick={onClick}
+        >
+            {item.title}
+        </div>
+    );
+});
+
 export function Select(props: SelectPropsType) {
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
@@ -76,13 +97,15 @@ export function Select(props: SelectPropsType) {
                 {
                     active &&
                     <div className={styles.items}>
-                        {props.items.map(i => <div
-                            onMouseEnter={() => setHoveredElementValue(i.value)}
-                            className={styles.item + " " + (hoveredItem === i ? styles.selected : "")}
-                            key={i.value}
-                            onClick={() => onItemClick(i.value)}
-                        >{i.title}
-                        </div>)}
+                        {props.items.map(i => (
+                            <SelectItem
+                                key={i.value}
+                                item={i}
+                                onMouseEnter={() => setHoveredElementValue(i.value)}
+                                onClick={() => onItemClick(i.value)}
+                                selected={hoveredItem === i}
+                            />
+                        ))}
                     </div>
                 }
             </div>
