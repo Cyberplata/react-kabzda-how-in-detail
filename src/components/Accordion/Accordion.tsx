@@ -17,10 +17,10 @@ export function Accordion(props: AccordionPropsType) {
     console.log("Accordion rendering")
 
     return <div>
-        <AccordionTitle title={props.titleValue}
+        <MemoizedAccordionTitle title={props.titleValue}
                         onChange={props.onChange}
         />
-        {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
+        {!props.collapsed && <MemoizedAccordionBody items={props.items} onClick={props.onClick}/>}
     </div>
 }
 
@@ -36,6 +36,8 @@ function AccordionTitle(props: AccordionTitlePropsType) {
         <h3 onClick={(event) => props.onChange()}>-- {props.title} --</h3>
     )
 }
+const MemoizedAccordionTitle = React.memo(AccordionTitle);
+
 
 type AccordionBodyPropsType = {
     items: ItemType[]
@@ -52,21 +54,4 @@ function AccordionBody(props: AccordionBodyPropsType) {
         }
     </ul>
 }
-
-
-////////////////////////////////////////////////////////////
-// function Accordion2(props: AccordionPropsType) {
-//     // console.log("Accordion rendering")
-//
-//     if (!props.collapsed) {
-//         return <div>
-//             <AccordionTitle title={props.titleValue}/>
-//             <AccordionBody/>
-//         </div>
-//     } else {
-//         return <div>
-//             <AccordionTitle title={props.titleValue}/>
-//         </div>
-//     }
-// }
-
+const MemoizedAccordionBody = React.memo(AccordionBody);
