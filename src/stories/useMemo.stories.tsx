@@ -12,6 +12,11 @@ export const UseMemoStories = () => {
     let resultB = 1;
 
     for (let i = 1; i <= a; i++) {
+        let fake = 0
+        while (fake < 100000000) {
+            fake++;
+            const fakeValue = Math.random();
+        }
         resultA = resultA * i;
     }
     for (let i = 1; i <= b; i++) {
