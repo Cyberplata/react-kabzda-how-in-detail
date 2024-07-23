@@ -12,7 +12,7 @@ export const DifficultCountingExample = () => {
     let resultB = 1;
 
     resultA = useMemo(() => {
-        // debugger
+        debugger
         let tempResultA = 1;
         for (let i = 1; i <= a; i++) {
             let fake = 0;
