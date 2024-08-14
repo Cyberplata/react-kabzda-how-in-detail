@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useMemo, useState} from 'react';
+import React, {ChangeEvent, useCallback, useMemo, useState} from 'react';
 import {log} from "node:util";
 
 export default {
@@ -104,6 +104,11 @@ export const LikeUseCallback = () => {
             console.log(books)
             setBooks([...books, "Angular " + new Date().getTime()])
         }
+    }, [books]);
+
+    const memoizedAddBook2 = useCallback(() => {
+        console.log(books)
+        setBooks([...books, "Angular " + new Date().getTime()])
     }, [books]);
 
     return <>
