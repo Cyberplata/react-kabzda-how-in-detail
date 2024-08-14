@@ -101,7 +101,7 @@ export const LikeUseCallback = () => {
 
     const memoizedAddBook = useMemo(() => {
         return addBook
-    }, [books]);
+    }, []);
 
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
