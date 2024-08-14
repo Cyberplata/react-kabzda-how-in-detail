@@ -1,5 +1,4 @@
 import React, {ChangeEvent, useCallback, useMemo, useState} from 'react';
-import {log} from "node:util";
 
 export default {
     title: 'useMemo',
@@ -116,7 +115,7 @@ export const LikeUseCallback = () => {
         {counter}
         <Book
             // books={newMainArray}
-            addBook={memoizedAddBook}
+            addBook={memoizedAddBook2}
         />
     </>
 }
