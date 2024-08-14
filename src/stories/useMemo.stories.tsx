@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useMemo, useState} from 'react';
+import {log} from "node:util";
 
 export default {
     title: 'useMemo',
@@ -94,6 +95,7 @@ export const LikeUseCallback = () => {
     // }, [books])
 
     const addBook = () => {
+        console.log(books)
         setBooks([...books, "Angular " + new Date().getTime()])
     }
 
