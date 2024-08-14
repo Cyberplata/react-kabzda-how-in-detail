@@ -81,8 +81,6 @@ export const HelpsToReactMemo = () => {
 }
 
 
-
-
 //-----------------------------------------------------------------------------
 export const LikeUseCallback = () => {
     console.log("LikeUseCallback")
@@ -101,16 +99,22 @@ export const LikeUseCallback = () => {
 
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
-        <button onClick={() => addBook()}>addBook</button>
+
         {counter}
-        <Book books={newMainArray} />
+        <Book books={newMainArray} addBook={addBook}/>
     </>
 }
 
-const BooksSecret = (props: { books: Array<string> }) => {
+type BooksSecretType = {
+    books: Array<string>
+    addBook: () => void
+}
+
+const BooksSecret = (props: BooksSecretType) => {
     // debugger
     console.log("Books Secret")
     return <div>
+        <button onClick={() => props.addBook()}>addBook</button>
         {props.books.map((book, i) => <div key={i}>{book}</div>)}
     </div>
 }
