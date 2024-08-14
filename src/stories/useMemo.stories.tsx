@@ -88,10 +88,10 @@ export const LikeUseCallback = () => {
     const [counter, setCounter] = useState(0);
     const [books, setBooks] = useState(["React", "JS", "CSS", "HTML"]);
 
-    const newMainArray = useMemo(() => {
-        const newArray = books.filter(b => b.toLowerCase().indexOf("a") > -1)
-        return newArray
-    }, [books])
+    // const newMainArray = useMemo(() => {
+    //     const newArray = books.filter(b => b.toLowerCase().indexOf("a") > -1)
+    //     return newArray
+    // }, [books])
 
     const addBook = () => {
         setBooks([...books, "Angular " + new Date().getTime()])
@@ -101,12 +101,15 @@ export const LikeUseCallback = () => {
         <button onClick={() => setCounter(counter + 1)}>+</button>
 
         {counter}
-        <Book books={newMainArray} addBook={addBook}/>
+        <Book
+            // books={newMainArray}
+            addBook={addBook}
+        />
     </>
 }
 
 type BooksSecretType = {
-    books: Array<string>
+    // books: Array<string>
     addBook: () => void
 }
 
@@ -115,7 +118,7 @@ const BooksSecret = (props: BooksSecretType) => {
     console.log("Books Secret")
     return <div>
         <button onClick={() => props.addBook()}>addBook</button>
-        {props.books.map((book, i) => <div key={i}>{book}</div>)}
+        {/*{props.books.map((book, i) => <div key={i}>{book}</div>)}*/}
     </div>
 }
 
