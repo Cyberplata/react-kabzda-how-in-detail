@@ -94,14 +94,17 @@ export const LikeUseCallback = () => {
     //     return newArray
     // }, [books])
 
-    const addBook = () => {
-        console.log(books)
-        setBooks([...books, "Angular " + new Date().getTime()])
-    }
+    // const addBook = () => {
+    //     console.log(books)
+    //     setBooks([...books, "Angular " + new Date().getTime()])
+    // }
 
     const memoizedAddBook = useMemo(() => {
-        return addBook
-    }, []);
+        return () => {
+            console.log(books)
+            setBooks([...books, "Angular " + new Date().getTime()])
+        }
+    }, [books]);
 
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
