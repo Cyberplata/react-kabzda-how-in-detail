@@ -136,8 +136,14 @@ export const SetWatchEffectExample1 = () => {
             setWatch(getCurrentTime());
         }, 1000);
 
-        // Очистка интервала при размонтировании компонента
-        return () => clearInterval(intervalId);
+        // Функция очистки
+        const cleanup = () => clearInterval(intervalId);
+
+        // Возвращаем функцию очистки
+        return cleanup;
+
+        // // Очистка интервала при размонтировании компонента
+        // return () => clearInterval(intervalId);
     }, []);
 
     return (
