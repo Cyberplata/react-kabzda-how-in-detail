@@ -29,7 +29,7 @@ export const Example1 = () => {
     }
 
     return <>
-        <button onClick={() => setCounter(changer)}>+</button>
+        <button onClick={() => setCounter((state) => state + 1)}>+</button>
         {counter}
     </>
 }
