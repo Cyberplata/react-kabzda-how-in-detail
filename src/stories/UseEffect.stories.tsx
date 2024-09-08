@@ -7,20 +7,24 @@ export default {
 export const SimpleExample = () => {
     console.log("SimpleExample")
 
+    const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
 
     useEffect(() => {
-        debugger
+        // debugger
         console.log("useEffect")
         document.title = counter.toString()
         //api.getUsers().then('')
         //setInterval
         //indexedDB - работа с базой данных в браузере
         //document.getElementId
-    });
+    }, [counter]);
 
     return <>
-        Hello, {counter}
-        <button onClick={() => setCounter(counter + 1)}>+</button>
+        Hello,
+        counter: {counter},
+        fake: {fake}
+        <button onClick={() => setFake(fake + 1)}>+</button>
+        {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}
     </>
 }
