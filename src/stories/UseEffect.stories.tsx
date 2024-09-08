@@ -43,17 +43,16 @@ export const SetTimeoutExample = () => {
     const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
 
-    // useEffect(() => {
-    //     debugger
-    //     console.log("useEffect every render")
-    //     document.title = counter.toString()
-    // });
+    useEffect(() => {
+        console.log("useEffect first render and every counter change")
 
-    setTimeout(() => {
-        // debugger;
-        console.log("setTimeout")
-        document.title = counter.toString()
-    }, 1000)
+        setTimeout(() => {
+            // debugger;
+            console.log("setTimeout")
+            document.title = counter.toString()
+        }, 2000)
+
+    }, [counter]);
 
     return <>
         Hello,
