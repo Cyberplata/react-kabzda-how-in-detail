@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 export default {
     title: "useEffect demo",
@@ -96,7 +96,6 @@ export const SetWatchEffectExample = () => {
     </>
 }
 
-
 export const SetWatchEffectExample1 = () => {
     console.log("SetWatchEffectExample1");
     // debugger
@@ -156,3 +155,48 @@ export const SetWatchEffectExample1 = () => {
     );
 };
 
+
+// Mistral
+export const SetWatchEffectExample2 = () => {
+    console.log("SetWatchEffectExample2");
+
+    // Функция для получения текущего времени в формате HH:MM:SS
+    const getCurrentTime = () => {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    };
+
+    // Инициализация состояния с текущим временем
+    const [watch, setWatch] = useState(getCurrentTime());
+
+    // Использование useRef для хранения идентификатора интервала
+    const intervalRef = useRef(null);
+
+    useEffect(() => {
+        console.log("useEffect first render and every second");
+
+        // Создание интервала
+        intervalRef.current = setInterval(() => {
+            console.log("tick: " + getCurrentTime());
+            setWatch(getCurrentTime());
+        }, 1000);
+
+        // Функция очистки
+        const cleanup = () => clearInterval(intervalRef.current);
+
+        // Возвращение функции очистки
+        return cleanup;
+    }, []);
+
+    return (
+        <>
+            Hello,
+            <div>
+                <time dateTime={new Date().toISOString()}>{watch}</time>
+            </div>
+        </>
+    );
+};
