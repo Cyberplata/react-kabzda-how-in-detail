@@ -10,13 +10,14 @@ export const SimpleExample = () => {
     const [counter, setCounter] = useState(1);
 
     useEffect(() => {
+        debugger
         console.log("useEffect")
+        document.title = counter.toString()
         //api.getUsers().then('')
         //setInterval
         //indexedDB - работа с базой данных в браузере
         //document.getElementId
-        //document.title = "User";
-    }, []);
+    });
 
     return <>
         Hello, {counter}
