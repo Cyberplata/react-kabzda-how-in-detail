@@ -18,7 +18,7 @@ export const SimpleExample = () => {
         //setInterval
         //indexedDB - работа с базой данных в браузере
         //document.getElementId
-    }, [counter]);
+    }, []);
 
     return <>
         Hello,
