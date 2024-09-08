@@ -30,9 +30,9 @@ export const SimpleExample = () => {
 
     return <>
         Hello,
-        counter: {counter},
-        fake: {fake}
-        <button onClick={() => setFake(fake + 1)}>+</button>
-        {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}
+        <div>counter: {counter},</div>
+        <div>fake: {fake}</div>
+        <button onClick={() => setFake(fake + 1)}>fake+</button>
+        <button onClick={() => setCounter(counter + 1)}>counter+</button>
     </>
 }
