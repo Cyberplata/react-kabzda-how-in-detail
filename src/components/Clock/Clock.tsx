@@ -12,16 +12,16 @@ export const Clock: React.FC<PropsType> = (props) => {
     useEffect(() => {
         console.log("useEffect only first render (componentDidMount)")
 
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             console.log("tick: " + date)
 
             setDate(new Date())
-        }, 1000)
-    }, []);
+        }, 1000);
 
-    // const secondsString = getTwoDigitsString(date.getSeconds())
-    // const minutesString = getTwoDigitsString(date.getMinutes())
-    // const hoursString = getTwoDigitsString(date.getHours())
+        return () => {
+            clearInterval(intervalID)
+        }
+    }, []);
 
     return <div>
         <span>{getTwoDigitsString(date.getHours())}</span>
