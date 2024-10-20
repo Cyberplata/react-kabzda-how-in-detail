@@ -10,23 +10,23 @@ export const SimpleExample = () => {
     const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
 
-    // useEffect(() => {
-    //     // debugger
-    //     console.log("useEffect every render")
-    //     document.title = counter.toString()
-    // });
-    //
-    // useEffect(() => {
-    //     // debugger
-    //     console.log("useEffect only first render (componentDidMount)")
-    //     document.title = counter.toString()
-    // }, []);
-    //
-    // useEffect(() => {
-    //     // debugger
-    //     console.log("useEffect first render and every counter change")
-    //     document.title = counter.toString()
-    // }, [counter]);
+    useEffect(() => {
+        // debugger
+        console.log("useEffect every render")
+        document.title = counter.toString()
+    });
+
+    useEffect(() => {
+        // debugger
+        console.log("useEffect only first render (componentDidMount)")
+        document.title = counter.toString()
+    }, []);
+
+    useEffect(() => {
+        // debugger
+        console.log("useEffect first render and every counter change")
+        document.title = counter.toString()
+    }, [counter]);
 
     return <>
         Hello,
@@ -37,38 +37,30 @@ export const SimpleExample = () => {
     </>
 }
 
-export const SetTimeoutExample = () => {
-    console.log("SetTimeoutExample")
-
-    const [fake, setFake] = useState(1);
-    const [counter, setCounter] = useState(1);
-
-    // useEffect(() => {
-    //     console.log("useEffect only first render (componentDidMount)")
-    //
-    //     setInterval(() => {
-    //         console.log("tick: " + counter)
-    //         setCounter(state => state + 1)
-    //     }, 1000)
-    //
-    // }, []);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         console.log("setTimeout")
-    //         document.title = counter.toString()
-    //     }, 1000)
-    //
-    // }, [counter]);
-
-    return <>
-        Hello, {counter} {fake}
-        {/*<div>counter: {counter},</div>*/}
-        {/*<div>fake: {fake}</div>*/}
-        <button onClick={() => setFake(fake + 1)}>fake+</button>
-        <button onClick={() => setCounter(counter + 1)}>counter+</button>
-    </>
-}
+// export const SetTimeoutExample = () => {
+//     console.log("SetTimeoutExample")
+//
+//     const [fake, setFake] = useState(1);
+//     const [counter, setCounter] = useState(1);
+//
+//     useEffect(() => {
+//         console.log("useEffect first render and every counter change")
+//
+//         // setInterval(() => {
+//         //     console.log("tick: " + counter)
+//         //     setCounter(state => state + 1)
+//         // }, 1000)
+//
+//     }, []);
+//
+//     return <>
+//         Hello,
+//         <div>counter: {counter},</div>
+//         <div>fake: {fake}</div>
+//         {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
+//         {/*<button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
+//     </>
+// }
 
 // export const SetWatchEffectExample = () => {
 //     console.log("SetWatchEffectExample")
@@ -85,7 +77,7 @@ export const SetTimeoutExample = () => {
 //     const [watch, setWatch] = useState(getCurrentTime);
 //
 //     useEffect(() => {
-//         console.log("useEffect only first render (componentDidMount)")
+//         console.log("useEffect first render and every counter change")
 //
 //         setInterval(() => {
 //             console.log("tick: " + watch)
@@ -103,7 +95,7 @@ export const SetTimeoutExample = () => {
 //         {/*<button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
 //     </>
 // }
-//
+
 // export const SetWatchEffectExample1 = () => {
 //     console.log("SetWatchEffectExample1");
 //     // debugger
@@ -162,8 +154,8 @@ export const SetTimeoutExample = () => {
 //         </>
 //     );
 // };
-//
-//
+
+
 // // Mistral
 // export const SetWatchEffectExample2 = () => {
 //     console.log("SetWatchEffectExample2");
@@ -181,23 +173,19 @@ export const SetTimeoutExample = () => {
 //     const [watch, setWatch] = useState(getCurrentTime());
 //
 //     // Использование useRef для хранения идентификатора интервала
-//     const intervalRef = useRef<number | null>(null);
+//     const intervalRef = useRef(null);
 //
 //     useEffect(() => {
 //         console.log("useEffect first render and every second");
 //
 //         // Создание интервала
-//         intervalRef.current = window.setInterval(() => {
+//         intervalRef.current = setInterval(() => {
 //             console.log("tick: " + getCurrentTime());
 //             setWatch(getCurrentTime());
 //         }, 1000);
 //
 //         // Функция очистки
-//         const cleanup = () => {
-//             if (intervalRef.current !== null) {
-//                 clearInterval(intervalRef.current);
-//             }
-//         };
+//         const cleanup = () => clearInterval(intervalRef.current);
 //
 //         // Возвращение функции очистки
 //         return cleanup;
