@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './AnalogClock.css';
 
 type Props = {
+    date:  Date
     get12HourFormat: (hours: number) => {hours: number, suffix: string}
     format: '12-hour' | '24-hour'
 }
 
-export const AnalogClock = ({get12HourFormat, format}: Props) => {
-    const [date, setDate] = useState(new Date());
+export const AnalogClock = ({date, get12HourFormat, format}: Props) => {
 
     const hours = format === '24-hour' ? date.getHours() : get12HourFormat(date.getHours()).hours;
 

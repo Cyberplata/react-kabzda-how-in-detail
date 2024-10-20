@@ -6,7 +6,7 @@
 //     ? "0" + num
 //     : num
 //
-// export const Clock: React.FC<PropsType> = (props) => {
+// export const ClockGPT: React.FC<PropsType> = (props) => {
 //     const [date, setDate] = useState(new Date())
 //
 //     useEffect(() => {
@@ -37,7 +37,8 @@
 // GPT
 import React, {useEffect, useState} from "react";
 import {AnalogClock} from "./AnalogClock/AnalogClock";
-// import './AnalogClock.css';
+import {DigitalClock} from "./DigitalClock/DigitalClock";
+
 
 type PropsType = {
     mode: 'digital' | 'analog',
@@ -52,7 +53,7 @@ const get12HourFormat = (hours: number) => {
     return { hours: adjustedHours, suffix };
 }
 
-export const Clock: React.FC<PropsType> = ({ mode, format }) => {
+export const ClockGPT: React.FC<PropsType> = ({ mode, format }) => {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -63,38 +64,7 @@ export const Clock: React.FC<PropsType> = ({ mode, format }) => {
     const hours = format === '24-hour' ? date.getHours() : get12HourFormat(date.getHours()).hours;
     const suffix = format === '12-hour' ? get12HourFormat(date.getHours()).suffix : '';
 
-    if (mode === 'digital') {
-        return (
-            <div>
-                <span>{getTwoDigitsString(hours)}</span>
-                :
-                <span>{getTwoDigitsString(date.getMinutes())}</span>
-                :
-                <span>{getTwoDigitsString(date.getSeconds())}</span>
-                {suffix && <span> {suffix}</span>}
-            </div>
-        );
-    }
-
-    // // Аналоговые часы (в виде наброска):
-    // const secondsStyle = {
-    //     transform: `rotate(${date.getSeconds() * 6}deg)`
-    // };
-    // const minutesStyle = {
-    //     transform: `rotate(${date.getMinutes() * 6}deg)`
-    // };
-    // const hoursStyle = {
-    //     transform: `rotate(${hours * 30 + date.getMinutes() * 0.5}deg)`
-    // };
-
-    return (
-        // <div className="clock">
-        //     <div className="analog-clock">
-        //         <div className="hour-hand" style={hoursStyle}></div>
-        //         <div className="minute-hand" style={minutesStyle}></div>
-        //         <div className="second-hand" style={secondsStyle}></div>
-        //     </div>
-        // </div>
-        <AnalogClock get12HourFormat={get12HourFormat} format={format}/>
-    );
+    return (mode === 'digital')
+        ? <DigitalClock date={date} getTwoDigitsString={getTwoDigitsString} hours={hours} suffix={suffix}/>
+        : <AnalogClock date={date} get12HourFormat={get12HourFormat} format={format}/>
 };

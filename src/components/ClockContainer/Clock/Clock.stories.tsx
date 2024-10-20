@@ -1,29 +1,29 @@
 // import React from "react";
-// import {Clock} from "./Clock";
+// import {ClockGPT} from "./ClockGPT";
 //
 // export default {
-//     title: "Clock",
-//     component: Clock
+//     title: "ClockGPT",
+//     component: ClockGPT
 // };
 //
 // export const BaseExample = () => {
 //     console.log("BaseExample")
 //
-//     return <Clock/>
+//     return <ClockGPT/>
 // }
 
 
 
 // GPT
 import React, { useState } from "react";
-import { Clock } from "./Clock";
+import {ClockGPT} from "./ClockGPT";
 
 export default {
     title: "Clock",
-    component: Clock
+    component: ClockGPT
 };
 
-export const ClockContainer: React.FC = () => {
+export const ClockContainerGPT: React.FC = () => {
     const [mode, setMode] = useState<'digital' | 'analog'>('digital');
     const [format, setFormat] = useState<'12-hour' | '24-hour'>('24-hour');
 
@@ -33,7 +33,7 @@ export const ClockContainer: React.FC = () => {
 
     return (
         <div>
-            <Clock mode={mode} format={format} />
+            <ClockGPT mode={mode} format={format} />
             <button onClick={handleClickMode}>
                 Switch to {mode === 'digital' ? 'Analog' : 'Digital'} Mode
             </button>
