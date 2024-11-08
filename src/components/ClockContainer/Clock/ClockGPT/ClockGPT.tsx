@@ -36,8 +36,8 @@
 
 // GPT
 import React, {useEffect, useState} from "react";
-import {AnalogClock} from "./AnalogClock/AnalogClock";
-import {DigitalClock} from "./DigitalClock/DigitalClock";
+import {AnalogClock} from "../AnalogClock/AnalogClock";
+import {DigitalClock} from "../DigitalClock/DigitalClock";
 
 
 type PropsType = {

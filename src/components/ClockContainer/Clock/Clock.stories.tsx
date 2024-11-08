@@ -16,7 +16,7 @@
 
 // GPT
 import React, { useState } from "react";
-import {ClockGPT} from "./ClockGPT";
+import {ClockGPT} from "./ClockGPT/ClockGPT";
 
 export default {
     title: "Clock",

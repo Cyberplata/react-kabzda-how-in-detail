@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {ClockDimych} from "./ClockDimych";
 
 export default {
@@ -6,11 +6,11 @@ export default {
     component: ClockDimych
 };
 
-export const ClockContainer: React.FC = () => {
+export const BaseAnalogExample: React.FC = () => {
+    return <ClockDimych mode={"analog"}/>
+};
 
-    return (
-        <div>
-            <ClockDimych/>
-        </div>
-    );
+
+export const BaseDigitalExample: React.FC = () => {
+    return <ClockDimych mode={"digital"}/>
 };

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 
-type PropsType = {}
+type PropsType = {
+    mode?: "analog" | "digital"
+}
 
 const getTwoDigitsString = (num: number) => num < 10
     ? "0" + num
@@ -26,10 +28,17 @@ export const ClockDimych: React.FC<PropsType> = (props) => {
     }, []);
 
     return <div>
-        <span>{getTwoDigitsString(date.getHours())}</span>
-        :
-        <span>{getTwoDigitsString(date.getMinutes())}</span>
-        :
-        <span>{getTwoDigitsString(date.getSeconds())}</span>
+        { props.mode === "digital"
+            ? <>
+                <span>{getTwoDigitsString(date.getHours())}</span>
+                :
+                <span>{getTwoDigitsString(date.getMinutes())}</span>
+                :
+                <span>{getTwoDigitsString(date.getSeconds())}</span>
+            </>
+            : <>
+                ANALOG
+            </>
+        }
     </div>
 }
