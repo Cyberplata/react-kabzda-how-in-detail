@@ -14,7 +14,7 @@ export const ClockDimych: React.FC<PropsType> = (props) => {
         console.log("useEffect only first render (componentDidMount)")
 
         const intervalID = setInterval(() => {
-            console.log("tick: " + date)
+            // console.log("tick: " + date)
 
             setDate(new Date())
         }, 1000);
